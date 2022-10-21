@@ -107,14 +107,14 @@ PRODUCT_COPY_FILES += vendor/lineage/bootanimation/bootanimation.zip:$(TARGET_CO
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    pm.dexopt.boot=verify \
-    pm.dexopt.first-boot=quicken \
-    pm.dexopt.install=speed-profile \
-    pm.dexopt.bg-dexopt=speed-profile
+    pm.dexopt.boot?=verify \
+    pm.dexopt.first-boot?=quicken \
+    pm.dexopt.install?=speed-profile \
+    pm.dexopt.bg-dexopt?=speed-profile
 
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_PROPERTY_OVERRIDES += \
-    pm.dexopt.ab-ota=quicken
+    pm.dexopt.ab-ota?=quicken
 endif
 
 # Extra packages
